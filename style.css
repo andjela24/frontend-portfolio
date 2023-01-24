@@ -1,0 +1,119 @@
+/*Colors for magic text*/
+:root {
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
+}
+
+/*Magic text*/
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.wrapper-magic-text {
+    display: grid;
+    height: 20vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
+    place-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1>.magic {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(to right,
+            var(--purple),
+            var(--violet),
+            var(--pink),
+            var(--purple));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+/*Images*/
+
+#image-track {
+    display: flex;
+    height: 50vmin;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.card {
+    position: relative;
+    box-shadow: rgba(65, 69, 199, 0.3) 0px 5px 20px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5%;
+    overflow: hidden;
+    height: 55vmin;
+}
+
+#image-track .card-image {
+    width: 40vmin;
+    height: 55vmin;
+    object-fit: cover;
+    object-position: 100% 50%;
+    border-radius: inherit;
+    transition: transform 0.5s ease-in-out;
+}
+
+/*
+.card-text {
+    position: absolute;
+    padding: 1vmin;
+    left: 0;
+    right: 0;
+    bottom: 2vmin;
+    visibility: hidden;
+    text-align: center;
+    border-radius: inherit;
+    color: rgb(128, 128, 128);
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+}
+*/
+/*
+.card:hover {
+    height: 65vmin;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .card-text {
+    max-height: 5vmin;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .card-image {
+    transform: translateY(-5vmin);
+}
+*/
